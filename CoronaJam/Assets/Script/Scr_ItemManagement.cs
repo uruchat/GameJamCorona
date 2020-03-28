@@ -38,6 +38,7 @@ public class Scr_ItemManagement : MonoBehaviour
         {
             pickUpAllowed = true;
         }
+        if (other.CompareTag("Avatar") && this.CompareTag("DropOff"))
         {
             
             dropOffAllowed = true;
@@ -64,6 +65,11 @@ public class Scr_ItemManagement : MonoBehaviour
             manager.total++;
         }
     }
+    /*private void OnTriggerStay2D(Collider2D otherNpc)
+    {
+        Scr_NPC newNpc = otherNpc.gameObject.GetComponent<Scr_NPC>();
+        npc = newNpc;
+    }*/
     private void Drop()
     {
         if (this.CompareTag("PotionShelf") && manager.potionNbr >= 1)

@@ -33,9 +33,9 @@ public class Scr_Manager : MonoBehaviour
             total = 0;
         }
     }
-    public void SpawnNPC()
+    /*public void SpawnNPC()
     {
         Vector3 posNPC = new Vector3(0f, 0f, 0f);
         Scr_NPC tempNPC = Instantiate(modeleNPC, posNPC, modeleNPC.transform.rotation);
-    }
+    }*/
 }
