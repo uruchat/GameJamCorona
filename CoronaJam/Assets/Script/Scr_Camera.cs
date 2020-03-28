@@ -9,8 +9,19 @@ public class Scr_Camera : MonoBehaviour
 
     public void TransitionCamera()
     {
-        this.transform.position = this.transform.position == Comptoir ? Entrepot : Comptoir;
+        //this.transform.position = this.transform.position == Comptoir ? Entrepot : Comptoir;
+
+        if (this.transform.position == Comptoir)
+        {
+            this.transform.position = Entrepot;
+                
+        }
+        else
+        {
+            this.transform.position = Comptoir;
+        }
     }
+
 
 
     public void Update()
