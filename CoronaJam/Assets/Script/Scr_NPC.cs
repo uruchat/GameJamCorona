@@ -7,14 +7,19 @@ public class Scr_NPC : MonoBehaviour
 {
     private Transform tr;
 
-    public int produit_1 = 0; //potion qu'il VEUT avoir
-    public int produit_2 = 0; //mask qu'il VEUT avoir
+   
+
+    public int produit_1 = 0;
+    public int produit_2 = 0; 
     private int nbrProduitMax = 5 + 1;
 
 
     public Text NPCNeed;
 
-    public float satisfactionPoint = 100f;
+    public float satisfactionPoint;
+    public float satisfactionMaxPoint = 100f;
+    public Slider satisfactionBar;
+    
     public float score = 0f;
     public bool canGiveScore = true;
 
@@ -22,8 +27,9 @@ public class Scr_NPC : MonoBehaviour
     void Start()
     {
         tr = this.transform;
-        NeedCreator();
-
+        NeedCreator(); //appele la creation du besoin
+        satisfactionPoint = satisfactionMaxPoint;
+        satisfactionBar.value = CalculBar();
     }
 
     // Update is called once per frame
@@ -34,21 +40,22 @@ public class Scr_NPC : MonoBehaviour
         //probleme de String a Int  
 
         //Satisfaction du NPC. Point qui descend avec le temps
-        satisfactionPoint -= 0.5f * Time.deltaTime; //ajustement si necessaire     
+        satisfactionPoint -= 2f * Time.deltaTime; //ajustement si necessaire     
+        satisfactionBar.value = CalculBar();
 
         if (produit_1 == 0 && produit_2 == 0 && canGiveScore ==true) 
         { 
             score += satisfactionPoint;
             canGiveScore = false;
         }
-        //doit sortir de l'ecran et etre detruit
+        
 
        
            
     }
     /*private void OnBecameInvisible()
     {
-        Destroy(this.gameObject); //destruction du NPC quand sort de l'ecran. 
+        Destroy(this.gameObject); //destruction du NPC quand sort de l'ecran. //disparait quand on va dans le Backstore
     }*/
 
     //Mes Fonctions
@@ -59,4 +66,8 @@ public class Scr_NPC : MonoBehaviour
         
     }
 
+    float CalculBar() //donne un pourcentage pour le Slider
+    {
+        return satisfactionPoint / satisfactionMaxPoint; 
+    }
 }
