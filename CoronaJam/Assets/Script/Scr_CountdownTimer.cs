@@ -20,7 +20,8 @@ public class Scr_CountdownTimer : MonoBehaviour
     void Update()
     {
         currentTime -= 1 * Time.deltaTime;
-        countdownText.text = currentTime.ToString("0"); 
+
+        countdownText.text = currentTime.ToString("0"); //transfert de float a String.
 
         if (currentTime <= 0)
         {
