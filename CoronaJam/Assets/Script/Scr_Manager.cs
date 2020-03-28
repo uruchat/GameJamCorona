@@ -28,19 +28,19 @@ public class Scr_Manager : MonoBehaviour
     // Fonctions
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag = "Avatar")
+        if (other.CompareTag ("Avatar"))
         {
             pickUpAllowed = true;
         }
     }
     private void PickUp()
     {
-        if (GameObject.CompareTag = "PotionShelf" && total < 5)
+        if (this.CompareTag ("PotionShelf") && total < 5)
         {
             potionNbr++;
             total++;
         }
-        if (GameObject.CompareTag = "MaskShelf" && total < 5)
+        if (this.CompareTag ("MaskShelf") && total < 5)
         {
             maskNbr++;
             total++;
