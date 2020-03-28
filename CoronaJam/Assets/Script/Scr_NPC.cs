@@ -7,6 +7,8 @@ public class Scr_NPC : MonoBehaviour
 {
     private Transform tr;
 
+   
+
     public int produit_1 = 0; //potion qu'il VEUT avoir
     public int produit_2 = 0; //mask qu'il VEUT avoir
     private int nbrProduitMax = 5 + 1;
@@ -14,7 +16,10 @@ public class Scr_NPC : MonoBehaviour
 
     public Text NPCNeed;
 
-    public float satisfactionPoint = 100f;
+    public float satisfactionPoint;
+    public float satisfactionMaxPoint = 100f;
+    public Slider satisfactionBar;
+    
     public float score = 0f;
     public bool canGiveScore = true;
 
@@ -23,7 +28,8 @@ public class Scr_NPC : MonoBehaviour
     {
         tr = this.transform;
         NeedCreator();
-
+        satisfactionPoint = satisfactionMaxPoint;
+        satisfactionBar.value = CalculBar();
     }
 
     // Update is called once per frame
@@ -34,7 +40,8 @@ public class Scr_NPC : MonoBehaviour
         //probleme de String a Int  
 
         //Satisfaction du NPC. Point qui descend avec le temps
-        satisfactionPoint -= 0.5f * Time.deltaTime; //ajustement si necessaire     
+        satisfactionPoint -= 2f * Time.deltaTime; //ajustement si necessaire     
+        satisfactionBar.value = CalculBar();
 
         if (produit_1 == 0 && produit_2 == 0 && canGiveScore ==true) 
         { 
@@ -59,4 +66,8 @@ public class Scr_NPC : MonoBehaviour
         
     }
 
+    float CalculBar()
+    {
+        return satisfactionPoint / satisfactionMaxPoint;
+    }
 }
