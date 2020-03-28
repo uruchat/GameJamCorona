@@ -7,6 +7,8 @@ public class Scr_NPC : MonoBehaviour
 {
     private Transform tr;
 
+    public Image satisfactionBar;
+
     
 
     public int produit_1 = 0; //potion qu'il VEUT avoir
