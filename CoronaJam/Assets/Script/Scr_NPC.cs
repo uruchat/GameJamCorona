@@ -18,6 +18,7 @@ public class Scr_NPC : MonoBehaviour
 
     public float satisfactionPoint = 100f;
     public float score = 0f;
+    public bool canGiveScore = true;
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +38,10 @@ public class Scr_NPC : MonoBehaviour
         //Satisfaction du NPC. Point qui descend avec le temps
         satisfactionPoint -= 0.5f * Time.deltaTime; //ajustement si necessaire
 
-        if (produit_1 == 0 && produit_2 == 0) 
+        if (produit_1 == 0 && produit_2 == 0 && canGiveScore ==true) 
         { 
-            score = satisfactionPoint; 
+            score += satisfactionPoint;
+            canGiveScore = false;
         }
         //doit sortir de l'ecran et etre detruit
 
