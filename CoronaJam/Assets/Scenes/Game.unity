@@ -635,6 +635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791e2b27b950ea04e833dfa7f66fdee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  produit_1: 0
+  produit_2: 0
+  NPCNeed: {fileID: 862237570}
 --- !u!1 &1877961896
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,7 +828,7 @@ PrefabInstance:
     - target: {fileID: 7482951536264633375, guid: 92469ac17f9d27a4fa459bb1d44f429b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7482951536264633375, guid: 92469ac17f9d27a4fa459bb1d44f429b,
         type: 3}
