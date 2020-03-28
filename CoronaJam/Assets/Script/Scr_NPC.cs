@@ -7,10 +7,6 @@ public class Scr_NPC : MonoBehaviour
 {
     private Transform tr;
 
-    public Image satisfactionBar;
-
-    
-
     public int produit_1 = 0; //potion qu'il VEUT avoir
     public int produit_2 = 0; //mask qu'il VEUT avoir
     private int nbrProduitMax = 5 + 1;
@@ -38,7 +34,7 @@ public class Scr_NPC : MonoBehaviour
         //probleme de String a Int  
 
         //Satisfaction du NPC. Point qui descend avec le temps
-        satisfactionPoint -= 0.5f * Time.deltaTime; //ajustement si necessaire
+        satisfactionPoint -= 0.5f * Time.deltaTime; //ajustement si necessaire     
 
         if (produit_1 == 0 && produit_2 == 0 && canGiveScore ==true) 
         { 
