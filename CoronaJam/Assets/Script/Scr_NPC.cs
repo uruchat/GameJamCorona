@@ -9,8 +9,8 @@ public class Scr_NPC : MonoBehaviour
 
    
 
-    public int produit_1 = 0; //potion qu'il VEUT avoir
-    public int produit_2 = 0; //mask qu'il VEUT avoir
+    public int produit_1 = 0;
+    public int produit_2 = 0; 
     private int nbrProduitMax = 5 + 1;
 
 
@@ -66,8 +66,8 @@ public class Scr_NPC : MonoBehaviour
         
     }
 
-    float CalculBar()
+    float CalculBar() //donne un pourcentage pour le Slider
     {
-        return satisfactionPoint / satisfactionMaxPoint;
+        return satisfactionPoint / satisfactionMaxPoint; 
     }
 }
