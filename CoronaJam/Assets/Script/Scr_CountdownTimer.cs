@@ -25,7 +25,8 @@ public class Scr_CountdownTimer : MonoBehaviour
 
         if (currentTime <= 0)
         {
-            currentTime = 0; //si timer descent en bas de 0, il va rester a 0. Fonction a ajouter pour redemarrer lvl ou menu
+            currentTime = 0; //si timer descent en bas de 0, il va rester a 0. Fonction a 
+            //ajouter pour redemarrer lvl ou menu
         }
     }
 }
