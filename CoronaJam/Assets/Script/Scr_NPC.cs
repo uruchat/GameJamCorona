@@ -27,7 +27,7 @@ public class Scr_NPC : MonoBehaviour
     void Start()
     {
         tr = this.transform;
-        NeedCreator(); //appele la creation de besoin
+        NeedCreator(); //appele la creation du besoin
         satisfactionPoint = satisfactionMaxPoint;
         satisfactionBar.value = CalculBar();
     }
