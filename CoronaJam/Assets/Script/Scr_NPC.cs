@@ -46,10 +46,10 @@ public class Scr_NPC : MonoBehaviour
        
            
     }
-    private void OnBecameInvisible()
+    /*private void OnBecameInvisible()
     {
         Destroy(this.gameObject); //destruction du NPC quand sort de l'ecran. 
-    }
+    }*/
 
     //Mes Fonctions
     void NeedCreator() //function pour creer le Randomizer de Besoin
