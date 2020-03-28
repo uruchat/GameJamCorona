@@ -5,11 +5,11 @@ using UnityEngine;
 public class Scr_Camera : MonoBehaviour
 {
     private Vector3 Comptoir = new Vector3(0, 0, -10);
-    private Vector3 Entrepot = new Vector3(0, 10.8f, -10);
+    private Vector3 Entrepot = new Vector3(0, 270.0f, -10);
     private bool moveToEntrepot = false;
     private bool moveToComptoir = false;
 
-    private float speed = 10.0f; //speed of camera
+    private float speed = 300.0f; //speed of camera
 
     public void TransitionCamera()
     {

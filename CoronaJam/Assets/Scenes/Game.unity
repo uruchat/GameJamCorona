@@ -283,10 +283,10 @@ Canvas:
   m_GameObject: {fileID: 429457603}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1877961898}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -611,33 +611,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938343733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.8, z: 0}
+  m_LocalPosition: {x: 0, y: 270, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1818653614 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7482951536264633345, guid: 92469ac17f9d27a4fa459bb1d44f429b,
-    type: 3}
-  m_PrefabInstance: {fileID: 7482951537680068527}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1818653615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818653614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 791e2b27b950ea04e833dfa7f66fdee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  produit_1: 0
-  produit_2: 0
-  NPCNeed: {fileID: 862237570}
 --- !u!1 &1877961896
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +671,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.4
+  orthographic size: 135
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -810,6 +789,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1818653615, guid: 92469ac17f9d27a4fa459bb1d44f429b, type: 3}
+      propertyPath: NPCNeed
+      value: 
+      objectReference: {fileID: 862237570}
     - target: {fileID: 7482951536264633345, guid: 92469ac17f9d27a4fa459bb1d44f429b,
         type: 3}
       propertyPath: m_Name
@@ -818,12 +801,12 @@ PrefabInstance:
     - target: {fileID: 7482951536264633375, guid: 92469ac17f9d27a4fa459bb1d44f429b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.8
+      value: -110.6
       objectReference: {fileID: 0}
     - target: {fileID: 7482951536264633375, guid: 92469ac17f9d27a4fa459bb1d44f429b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -39.9
       objectReference: {fileID: 0}
     - target: {fileID: 7482951536264633375, guid: 92469ac17f9d27a4fa459bb1d44f429b,
         type: 3}
