@@ -33,10 +33,10 @@ public class Scr_Camera : MonoBehaviour
     {
 
         // Temporary for testing
-        if (Input.GetMouseButtonDown(0))
+       /* if (Input.GetMouseButtonDown(0))
         {
             TransitionCamera();
-        }
+        }*/
 
         if (moveToEntrepot)
         {
