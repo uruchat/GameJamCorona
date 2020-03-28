@@ -8,16 +8,56 @@ public class Scr_Avatar : MonoBehaviour
 {
     private Transform tr;
     //private int Speed = 5;
+    public Animator animatorAvatar;
 
     // Start is called before the first frame update
     void Start()
     {
         tr = this.transform;
+        animatorAvatar = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         tr.Translate(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f) * Time.deltaTime *100f, Space.World); //hori AD; verti WS, pas de Z, Time.deltaTime * Vitesse ajustable
+
+        if(Input.GetAxisRaw("Vertical")> 0.0f)
+        {
+            animatorAvatar.SetBool("isGoingLeft", false);
+            animatorAvatar.SetBool("isGoingRight", false);
+            animatorAvatar.SetBool("isGoingDown", false);
+            animatorAvatar.SetBool("isGoingUp", true);
+        }
+        if (Input.GetAxisRaw("Vertical") < 0.0f)
+        {
+            animatorAvatar.SetBool("isGoingLeft", false);
+            animatorAvatar.SetBool("isGoingRight", false);
+            animatorAvatar.SetBool("isGoingUp", false);
+            animatorAvatar.SetBool("isGoingDown", true);
+        }
+
+        if (Input.GetAxisRaw("Horizontal") > 0.0f)
+        {
+            animatorAvatar.SetBool("isGoingUp", false);
+            animatorAvatar.SetBool("isGoingDown", false);
+            animatorAvatar.SetBool("isGoingLeft", false);
+            animatorAvatar.SetBool("isGoingRight", true);
+        }
+        if (Input.GetAxisRaw("Horizontal") < 0.0f)
+        {
+            animatorAvatar.SetBool("isGoingUp", false);
+            animatorAvatar.SetBool("isGoingDown", false);
+            animatorAvatar.SetBool("isGoingRight", false);
+            animatorAvatar.SetBool("isGoingLeft", true);
+        }
+
+        if (Input.GetAxisRaw("Horizontal") == 0.0f && Input.GetAxis("Vertical") == 0.0f)
+        {
+            animatorAvatar.SetBool("isGoingUp", false);
+            animatorAvatar.SetBool("isGoingDown", false);
+            animatorAvatar.SetBool("isGoingRight", false);
+            animatorAvatar.SetBool("isGoingLeft", false);
+        }
     }
 }
