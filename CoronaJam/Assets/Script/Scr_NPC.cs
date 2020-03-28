@@ -10,7 +10,7 @@ public class Scr_NPC : MonoBehaviour
     public int produit_1 = 0;
     public int produit_2 = 0;
     private int nbrProduitMax = 5 + 1;
-    private bool besoinAtteint= false;
+    public bool besoinAtteint= false;
 
 
     public Text NPCNeed;
@@ -34,7 +34,7 @@ public class Scr_NPC : MonoBehaviour
     {
         //tr = this.transform;
         NeedCreator(); //appele la creation du besoin
-        satisfactionPoint = satisfactionMaxPoint;
+        satisfactionPoint = satisfactionMaxPoint; //necessaire pour faire un % du slide de la satisfactionBar
         satisfactionBar.value = CalculBar();
 
         transform.position = waypoints[waypointIndex].transform.position; //fait apparaitre le NPC sur le 1er Waypoint 0
@@ -57,15 +57,14 @@ public class Scr_NPC : MonoBehaviour
             Move();
         }
         
-
         //Satisfaction du NPC. Points qui descendent avec le temps
         satisfactionPoint -= 2f * Time.deltaTime; //ajustement si necessaire     
         satisfactionBar.value = CalculBar();
 
-        if (produit_1 == 0 && produit_2 == 0 && canGiveScore == true)
+        if (produit_1 == 0 && produit_2 == 0)
         {
-            score += satisfactionPoint;
-            canGiveScore = false;
+            //score += satisfactionPoint;
+            //canGiveScore = false;
             besoinAtteint = true;
         }     
            
@@ -93,25 +92,11 @@ public class Scr_NPC : MonoBehaviour
     {
 
         transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
-
        
         if (transform.position == waypoints[waypointIndex].transform.position)
         {
             waypointIndex++;
         }
-
-        /*transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
-
-        if (transform.position == waypoints[1].transform.position && !besoinAtteint)
-        {
-            transform.position = waypoints[1].transform.position
-        }
-
-        if (transform.position == waypoints[waypointIndex].transform.position)
-        {
-            waypointIndex++;
-        }
-        */
 
     }
 }
