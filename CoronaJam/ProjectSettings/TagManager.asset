@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Avatar
   - PotionShelf
+  - MaskShelf
   layers:
   - Default
   - TransparentFX
