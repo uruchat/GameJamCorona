@@ -5,21 +5,25 @@ using UnityEngine.UI;
 
 public class Scr_NPC : MonoBehaviour
 {
-    public int produitBesoin_1 = 0; //papier Q qu'il VEUT avoir
-    public int produitBesoin_2 = 0; //bouffe qu'il VEUT avoir
+    private Transform tr;
+
+    public int potionBesoin_1 = 0; //potion qu'il VEUT avoir
+    public int maskBesoin_2 = 0; //mask qu'il VEUT avoir
     private int nbrProduitMax = 5;
 
-    public int currentProduit_1 = 0; //papier Q qu'il a en main
-    public int currentProduit_2 = 0; //bouffe qu'il a en main
+    public int currentPotion_1 = 0; //papier Q qu'il a en main
+    public int currentMask_2 = 0; //bouffe qu'il a en main
 
 
     public Text NPCNeed;
 
     public float satisfactionPoint = 100f;
+    public float score = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
+        tr = this.transform;
         NeedCreator();
 
     }
@@ -31,14 +35,26 @@ public class Scr_NPC : MonoBehaviour
         //NPCNeed.text = ("Papier Q : {0} / {1} n/Bouffe : {2} / {3}", currentProduit_1, produitBesoin_1, currentProduit_2, produitBesoin_2);
         //probleme de String a Int  
 
-        //Satisfaction du NPC. point qui descend avec le temps.
+        //Satisfaction du NPC. Point qui descend avec le temps.
 
-        satisfactionPoint -= 0.5f * Time.deltaTime;
+        satisfactionPoint -= 0.5f * Time.deltaTime; //ajustement si necessaire
 
-        if (currentProduit_1 == produitBesoin_1 && currentProduit_2 == produitBesoin_2) { }
+        if (currentPotion_1 == potionBesoin_1 && currentMask_2 == maskBesoin_2) 
+        { 
+            score = satisfactionPoint; 
+            if (tr.position.x >= 
+        }
+        //doit sortir de l'ecran et etre detruit
+
+       
            
     }
+    private void OnBecameInvisible()
+    {
+        Destroy(this.gameObject); //destruction du NPC quand sort de l'ecran. 
+    }
 
+    //Mes Fonctions
     void NeedCreator() //function pour creer le Randomizer de Besoin
     {
         produitBesoin_1 = Random.Range(0, nbrProduitMax);
