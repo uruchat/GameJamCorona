@@ -13,8 +13,7 @@ public class Scr_Camera : MonoBehaviour
 
         if (this.transform.position == Comptoir)
         {
-            this.transform.position = Entrepot;
-                
+            this.transform.position = Entrepot;     
         }
         else
         {
