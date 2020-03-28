@@ -867,6 +867,10 @@ PrefabInstance:
       propertyPath: NPCNeed
       value: 
       objectReference: {fileID: 862237570}
+    - target: {fileID: 1818653615, guid: 92469ac17f9d27a4fa459bb1d44f429b, type: 3}
+      propertyPath: satisfactionBar
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7482951536264633345, guid: 92469ac17f9d27a4fa459bb1d44f429b,
         type: 3}
       propertyPath: m_Name
