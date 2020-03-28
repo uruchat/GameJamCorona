@@ -16,6 +16,6 @@ public class Scr_Avatar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tr.Translate(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f) * Time.deltaTime * 10f, Space.World);
+        tr.Translate(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f) * Time.deltaTime * 10f, Space.World); //hori AD; verti WS, pas de Z, Time.deltaTime * Vitesse ajustable
     }
 }
