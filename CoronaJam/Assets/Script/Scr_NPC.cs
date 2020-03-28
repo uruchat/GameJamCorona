@@ -27,7 +27,7 @@ public class Scr_NPC : MonoBehaviour
     void Start()
     {
         tr = this.transform;
-        NeedCreator();
+        NeedCreator(); //appele la creation du besoin
         satisfactionPoint = satisfactionMaxPoint;
         satisfactionBar.value = CalculBar();
     }
@@ -48,14 +48,14 @@ public class Scr_NPC : MonoBehaviour
             score += satisfactionPoint;
             canGiveScore = false;
         }
-        //doit sortir de l'ecran et etre detruit
+        
 
        
            
     }
     /*private void OnBecameInvisible()
     {
-        Destroy(this.gameObject); //destruction du NPC quand sort de l'ecran. 
+        Destroy(this.gameObject); //destruction du NPC quand sort de l'ecran. //disparait quand on va dans le Backstore
     }*/
 
     //Mes Fonctions
