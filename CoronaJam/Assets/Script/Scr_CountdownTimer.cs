@@ -12,6 +12,7 @@ public class Scr_CountdownTimer : MonoBehaviour
     public Image potionInventory;
     public Image maskInventory;
     public Image totalInventory;
+    public Text score;
     // Start is called before the first frame update
     void Start()
     {
