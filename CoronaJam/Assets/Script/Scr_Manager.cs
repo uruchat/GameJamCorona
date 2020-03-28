@@ -10,6 +10,7 @@ public class Scr_Manager : MonoBehaviour
     public int maskNbr = 0;
     public int total = 0;
     public Scr_NPC modeleNPC;
+    public float score = 0;
     // Start is called before the first frame update
     void Start()
     {

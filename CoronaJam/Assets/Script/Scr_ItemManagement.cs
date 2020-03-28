@@ -44,6 +44,11 @@ public class Scr_ItemManagement : MonoBehaviour
             dropOffAllowed = true;
             
         }
+        if (other.CompareTag("NPC"))
+        {
+            Scr_NPC newNpc = other.gameObject.GetComponent<Scr_NPC>();
+            npc = newNpc;
+        }
 
     }
     private void OnTriggerExit2D(Collider2D other)
