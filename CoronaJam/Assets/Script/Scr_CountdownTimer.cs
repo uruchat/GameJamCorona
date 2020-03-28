@@ -7,9 +7,11 @@ public class Scr_CountdownTimer : MonoBehaviour
 {
     private float currentTime = 0f;
     private float startingTime = 25f; //duree en seconde du Timer
-
+    public Scr_Manager manager;
     public Text countdownText;
-
+    public Image potionInventory;
+    public Image maskInventory;
+    public Image totalInventory;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +30,9 @@ public class Scr_CountdownTimer : MonoBehaviour
             currentTime = 0; //si timer descent en bas de 0, il va rester a 0. Fonction a 
             //ajouter pour redemarrer lvl ou menu
         }
+        potionInventory.fillAmount = (float) manager.potionNbr / 5;
+        maskInventory.fillAmount = (float)manager.maskNbr / 5;
+        totalInventory.fillAmount = (float)manager.total / 5;
+      
     }
 }
