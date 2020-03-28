@@ -48,7 +48,15 @@ public class Scr_NPC : MonoBehaviour
         //NPCNeed.text = ("Potion : {0} / {1} n/Mask : {2} / {3}", currentProduit_1, produitBesoin_1, currentProduit_2, produitBesoin_2);
         //probleme de String a Int  
 
-        Move();
+        if (transform.position == waypoints[1].transform.position && besoinAtteint == false)
+        {
+            transform.position = waypoints[1].transform.position;
+        }
+        else
+        {
+            Move();
+        }
+        
 
         //Satisfaction du NPC. Points qui descendent avec le temps
         satisfactionPoint -= 2f * Time.deltaTime; //ajustement si necessaire     
