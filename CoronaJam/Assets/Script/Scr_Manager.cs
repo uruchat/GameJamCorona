@@ -18,6 +18,17 @@ public class Scr_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+    if (potionNbr <= 0)
+        {
+            potionNbr = 0;
+        }
+    if (maskNbr <= 0)
+        {
+            maskNbr = 0;
+        }
+    if (total <= 0)
+        {
+            total = 0;
+        }
     }
 }

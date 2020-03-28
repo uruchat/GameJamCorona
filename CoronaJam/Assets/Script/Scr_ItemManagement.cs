@@ -6,6 +6,8 @@ public class Scr_ItemManagement : MonoBehaviour
 {
     public Scr_Manager manager;
     public bool pickUpAllowed = false;
+    public Scr_NPC npc;
+    public bool dropOffAllowed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,20 +25,29 @@ public class Scr_ItemManagement : MonoBehaviour
         {
             Drop();
         }
-
+        if (dropOffAllowed && Input.GetKeyDown(KeyCode.Q))
+        {
+            Give();
+        }
+        
     }
     // Fonctions
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Avatar"))
+        if (other.CompareTag("Avatar") && !this.CompareTag("DropOff"))
         {
             pickUpAllowed = true;
+        }
+        else
+        {
+            dropOffAllowed = true;
         }
 
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         pickUpAllowed = false;
+        dropOffAllowed = false;
     }
     private void PickUp()
     {
@@ -62,6 +73,33 @@ public class Scr_ItemManagement : MonoBehaviour
         {
             manager.maskNbr--;
             manager.total--;
+        }
+    }
+    private void Give()
+    {
+        if (this.CompareTag("DropOff") && npc.produit_1 >= manager.potionNbr)
+        {
+            npc.produit_1 -= manager.potionNbr;
+            manager.total -= manager.potionNbr;
+            manager.potionNbr -= manager.potionNbr;
+        }
+        if (this.CompareTag("DropOff") && npc.produit_1 <= manager.potionNbr)
+        {
+            manager.total -= npc.produit_1;
+            manager.potionNbr -= npc.produit_1;
+            npc.produit_1 = 0;
+        }
+        if (this.CompareTag("DropOff") && npc.produit_2 >= manager.maskNbr)
+        {
+            npc.produit_2 -= manager.maskNbr;
+            manager.total -= manager.maskNbr;
+            manager.maskNbr -= manager.maskNbr;
+        }
+        if (this.CompareTag("DropOff") && npc.produit_2 <= manager.maskNbr)
+        {
+            manager.total -= npc.produit_2;
+            manager.maskNbr -= npc.produit_2;
+            npc.produit_2 = 0;
         }
     }
 }
