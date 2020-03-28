@@ -38,9 +38,10 @@ public class Scr_ItemManagement : MonoBehaviour
         {
             pickUpAllowed = true;
         }
-        else
         {
+            
             dropOffAllowed = true;
+            
         }
 
     }
@@ -48,6 +49,7 @@ public class Scr_ItemManagement : MonoBehaviour
     {
         pickUpAllowed = false;
         dropOffAllowed = false;
+        
     }
     private void PickUp()
     {
@@ -102,4 +104,5 @@ public class Scr_ItemManagement : MonoBehaviour
             npc.produit_2 = 0;
         }
     }
+    
 }

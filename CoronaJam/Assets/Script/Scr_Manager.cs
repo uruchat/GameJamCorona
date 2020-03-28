@@ -9,9 +9,11 @@ public class Scr_Manager : MonoBehaviour
     public int potionNbr = 0;
     public int maskNbr = 0;
     public int total = 0;
+    public Scr_NPC modeleNPC;
     // Start is called before the first frame update
     void Start()
     {
+        
         
     }
 
@@ -30,5 +32,10 @@ public class Scr_Manager : MonoBehaviour
         {
             total = 0;
         }
+    }
+    public void SpawnNPC()
+    {
+        Vector3 posNPC = new Vector3(0f, 0f, 0f);
+        Scr_NPC tempNPC = Instantiate(modeleNPC, posNPC, modeleNPC.transform.rotation);
     }
 }

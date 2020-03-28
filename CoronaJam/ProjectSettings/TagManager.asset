@@ -8,6 +8,7 @@ TagManager:
   - PotionShelf
   - MaskShelf
   - DropOff
+  - NPC
   layers:
   - Default
   - TransparentFX
