@@ -58,6 +58,7 @@ public class Scr_NPC : MonoBehaviour
         {
             score += satisfactionPoint;
             canGiveScore = false;
+            besoinAtteint = true;
         }     
            
     }
@@ -70,8 +71,8 @@ public class Scr_NPC : MonoBehaviour
     //Mes Fonctions
     void NeedCreator() //function pour creer le Randomizer de Besoin
     {
-        //produit_1 = Random.Range(0, nbrProduitMax);
-        //produit_2 = Random.Range(0, nbrProduitMax);
+        produit_1 = Random.Range(0, nbrProduitMax);
+        produit_2 = Random.Range(0, nbrProduitMax);
         
     }
 
@@ -82,37 +83,27 @@ public class Scr_NPC : MonoBehaviour
 
     void Move() //faire bouger le NPC sur les waypoints
     {
-       
 
         transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
 
+       
         if (transform.position == waypoints[waypointIndex].transform.position)
         {
             waypointIndex++;
         }
 
-        /*if (waypointIndex == waypoints.Length)
-        {
-            waypointIndex = 0;
-        }*/
-        /*transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+        /*transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
 
-        if (transform.position == waypoints[1].transform.position)
+        if (transform.position == waypoints[1].transform.position && !besoinAtteint)
+        {
+            transform.position = waypoints[1].transform.position
+        }
+
+        if (transform.position == waypoints[waypointIndex].transform.position)
         {
             waypointIndex++;
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
         }
-
-        if (transform.position == waypoints[2].transform.position)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[3].transform.position, moveSpeed * Time.deltaTime);
-        }
-
-        //if (produit_1 == 0 && produit_2 == 0)
-        if (transform.position == waypoints[3].transform.position)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[4].transform.position, moveSpeed = 50 * Time.deltaTime);
-        }*/
+        */
 
     }
 }
