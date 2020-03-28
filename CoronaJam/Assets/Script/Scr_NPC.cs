@@ -10,6 +10,7 @@ public class Scr_NPC : MonoBehaviour
     public int produit_1 = 0;
     public int produit_2 = 0;
     private int nbrProduitMax = 5 + 1;
+    private bool besoinAtteint= false;
 
 
     public Text NPCNeed;
@@ -46,25 +47,7 @@ public class Scr_NPC : MonoBehaviour
         //NPCNeed.text = ("Potion : {0} / {1} n/Mask : {2} / {3}", currentProduit_1, produitBesoin_1, currentProduit_2, produitBesoin_2);
         //probleme de String a Int  
 
-        //Move();
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[1].transform.position, moveSpeed * Time.deltaTime);
-
-        if (transform.position == waypoints[1].transform.position)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[2].transform.position, moveSpeed * Time.deltaTime);
-        }
-
-        if (transform.position == waypoints[2].transform.position)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[3].transform.position, moveSpeed * Time.deltaTime);
-        }
-
-        //if (produit_1 == 0 && produit_2 == 0)
-        if (transform.position == waypoints[3].transform.position)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[4].transform.position, moveSpeed = 50 * Time.deltaTime);
-        }
-
+        Move();
       
         //Satisfaction du NPC. Points qui descendent avec le temps
         satisfactionPoint -= 2f * Time.deltaTime; //ajustement si necessaire     
@@ -104,10 +87,20 @@ public class Scr_NPC : MonoBehaviour
 
         if (transform.position == waypoints[1].transform.position)
         {
+            waypointIndex++;
+            transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+        }
+
+        if (transform.position == waypoints[2].transform.position)
+        {
             transform.position = Vector2.MoveTowards(transform.position, waypoints[3].transform.position, moveSpeed * Time.deltaTime);
         }
 
-       
-        
+        //if (produit_1 == 0 && produit_2 == 0)
+        if (transform.position == waypoints[3].transform.position)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, waypoints[4].transform.position, moveSpeed = 50 * Time.deltaTime);
+        }
+
     }
 }
