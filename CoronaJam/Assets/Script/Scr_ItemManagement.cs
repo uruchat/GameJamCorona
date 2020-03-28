@@ -19,6 +19,10 @@ public class Scr_ItemManagement : MonoBehaviour
         {
             PickUp();
         }
+        if (pickUpAllowed && Input.GetKeyDown(KeyCode.Q))
+        {
+            Drop();
+        }
 
     }
     // Fonctions
@@ -45,6 +49,19 @@ public class Scr_ItemManagement : MonoBehaviour
         {
             manager.maskNbr++;
             manager.total++;
+        }
+    }
+    private void Drop()
+    {
+        if (this.CompareTag("PotionShelf") && manager.potionNbr >= 1)
+        {
+            manager.potionNbr--;
+            manager.total--;
+        }
+        if (this.CompareTag("MaskShelf") && manager.maskNbr >= 1)
+        {
+            manager.maskNbr--;
+            manager.total--;
         }
     }
 }
