@@ -38,6 +38,7 @@ public class Scr_NPC : MonoBehaviour
         satisfactionBar.value = CalculBar();
 
         transform.position = waypoints[waypointIndex].transform.position; //fait apparaitre le NPC sur le 1er Waypoint
+       
     }
 
     // Update is called once per frame
@@ -53,14 +54,11 @@ public class Scr_NPC : MonoBehaviour
         satisfactionPoint -= 2f * Time.deltaTime; //ajustement si necessaire     
         satisfactionBar.value = CalculBar();
 
-        if (produit_1 == 0 && produit_2 == 0 && canGiveScore ==true) 
-        { 
+        if (produit_1 == 0 && produit_2 == 0 && canGiveScore == true)
+        {
             score += satisfactionPoint;
             canGiveScore = false;
-        }
-        
-
-       
+        }     
            
     }
     /*private void OnBecameInvisible()
@@ -83,7 +81,17 @@ public class Scr_NPC : MonoBehaviour
 
     void Move() //faire bouger le NPC sur les waypoints
     {
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[1].transform.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+
+        if (transform.position == waypoints[waypointIndex].transform.position)
+        {
+            waypointIndex++;
+        }
+        /*if (waypointIndex == waypoints.Length)
+        {
+            waypointIndex = 0;
+        }*/
+        /*transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
 
         if (transform.position == waypoints[1].transform.position)
         {
@@ -100,7 +108,7 @@ public class Scr_NPC : MonoBehaviour
         if (transform.position == waypoints[3].transform.position)
         {
             transform.position = Vector2.MoveTowards(transform.position, waypoints[4].transform.position, moveSpeed = 50 * Time.deltaTime);
-        }
+        }*/
 
     }
 }
