@@ -37,7 +37,7 @@ public class Scr_NPC : MonoBehaviour
         //Satisfaction du NPC. Point qui descend avec le temps
         satisfactionPoint -= 0.5f * Time.deltaTime; //ajustement si necessaire
 
-        if (Produit_1 == 0 && Produit_2 == 0) 
+        if (produit_1 == 0 && produit_2 == 0) 
         { 
             score = satisfactionPoint; 
         }
