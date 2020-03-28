@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//**Auteur Maxime Galarneau 27/03/2020**//
+
 public class Scr_Avatar : MonoBehaviour
 {
     private Transform tr;
