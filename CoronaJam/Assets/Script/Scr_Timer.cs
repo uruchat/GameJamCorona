@@ -33,5 +33,5 @@ public class Scr_Timer : MonoBehaviour
     void Update()
     {
         
-    }
+    }*/
 }
