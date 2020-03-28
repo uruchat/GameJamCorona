@@ -23,7 +23,7 @@ public class Scr_NPC : MonoBehaviour
     public bool canGiveScore = true;
 
     
-    public float moveSpeed = 2f;
+    public float moveSpeed = 50f;
 
    
     public  Transform[] waypoints; //tableau de waypoint dans Inspector
@@ -37,7 +37,7 @@ public class Scr_NPC : MonoBehaviour
         satisfactionPoint = satisfactionMaxPoint;
         satisfactionBar.value = CalculBar();
 
-        transform.position = waypoints[waypointIndex].transform.position; //fait apparaitre le NPC sur le 1er Waypoint
+        transform.position = waypoints[waypointIndex].transform.position; //fait apparaitre le NPC sur le 1er Waypoint 0
        
     }
 
@@ -49,7 +49,7 @@ public class Scr_NPC : MonoBehaviour
         //probleme de String a Int  
 
         Move();
-      
+
         //Satisfaction du NPC. Points qui descendent avec le temps
         satisfactionPoint -= 2f * Time.deltaTime; //ajustement si necessaire     
         satisfactionBar.value = CalculBar();
@@ -61,6 +61,7 @@ public class Scr_NPC : MonoBehaviour
         }     
            
     }
+
     /*private void OnBecameInvisible()
     {
         Destroy(this.gameObject); //destruction du NPC quand sort de l'ecran. //disparait quand on va dans le Backstore
@@ -81,12 +82,15 @@ public class Scr_NPC : MonoBehaviour
 
     void Move() //faire bouger le NPC sur les waypoints
     {
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+       
+
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
 
         if (transform.position == waypoints[waypointIndex].transform.position)
         {
             waypointIndex++;
         }
+
         /*if (waypointIndex == waypoints.Length)
         {
             waypointIndex = 0;
