@@ -34,6 +34,7 @@ public class Scr_NPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        elManager = GameObject.Find("Manager").GetComponent<Scr_Manager>();
         //tr = this.transform;
         NeedCreator(); //appele la creation du besoin
         satisfactionPoint = satisfactionMaxPoint; //necessaire pour faire un % du slide de la satisfactionBar
@@ -65,8 +66,8 @@ public class Scr_NPC : MonoBehaviour
 
         if (produit_1 == 0 && produit_2 == 0)
         {
-            //score += satisfactionPoint;
-            //canGiveScore = false;
+            elManager.score += this.satisfactionPoint;
+            canGiveScore = false;
             besoinAtteint = true;
         }     
            
