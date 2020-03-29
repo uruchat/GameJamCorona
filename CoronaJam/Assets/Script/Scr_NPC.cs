@@ -54,7 +54,7 @@ public class Scr_NPC : MonoBehaviour
     void Update()
     {
         needing.text = "I need " + produit_1.ToString() + " potions and " + produit_2.ToString() + " masks";
-        if (produit_1 == 0 && produit_2 == 0)
+        if (produit_1 == 0 && produit_2 == 0 && canGiveScore)
         {
             elManager.score += satisfactionPoint;
             canGiveScore = false;
