@@ -57,7 +57,6 @@ public class Scr_NPC : MonoBehaviour
         if (produit_1 == 0 && produit_2 == 0 && canGiveScore)
         {
             elManager.score += satisfactionPoint;
-            needing.text = "Thank you!";
             canGiveScore = false;
            
         }
@@ -77,6 +76,7 @@ public class Scr_NPC : MonoBehaviour
         //Satisfaction du NPC. Points qui descendent avec le temps
         if (produit_1 == 0 && produit_2 == 0) // si besoin est atteint...
         {
+            needing.text = "Thank you!";
             besoinAtteint = true;
             countdownActive = false; 
         }
