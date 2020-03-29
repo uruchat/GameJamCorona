@@ -12,7 +12,7 @@ public class Scr_ItemManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = GameObject.Find("Manager").GetComponent<Scr_Manager>();
     }
 
     // Update is called once per frame
