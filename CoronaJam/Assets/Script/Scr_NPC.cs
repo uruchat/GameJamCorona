@@ -100,4 +100,8 @@ public class Scr_NPC : MonoBehaviour
         }
 
     }
+    public void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
 }
