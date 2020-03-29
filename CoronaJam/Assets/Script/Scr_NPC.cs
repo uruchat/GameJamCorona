@@ -71,8 +71,13 @@ public class Scr_NPC : MonoBehaviour
             elManager.score += this.satisfactionPoint;
             canGiveScore = false;
             besoinAtteint = true;
-        }     
-           
+        }
+        if (transform.position == waypoints[4].transform.position)
+        {
+            Destroy(this.gameObject);
+        }
+
+
     }
 
     
@@ -100,8 +105,5 @@ public class Scr_NPC : MonoBehaviour
         }
 
     }
-    public void OnBecameInvisible()
-    {
-        Destroy(this.gameObject);
-    }
+    
 }
