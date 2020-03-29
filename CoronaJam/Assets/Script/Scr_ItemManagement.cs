@@ -41,7 +41,7 @@ public class Scr_ItemManagement : MonoBehaviour
             {
                 manager.SpawnNPC();
                 npc.boolOnce = false;
-                Destroy(npc);
+                //Destroy(npc);
             }
         }
 
