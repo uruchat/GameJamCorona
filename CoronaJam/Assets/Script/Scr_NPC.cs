@@ -47,7 +47,6 @@ public class Scr_NPC : MonoBehaviour
         satisfactionBar.value = CalculBar();
 
         transform.position = waypoints[waypointIndex].transform.position; //fait apparaitre le NPC sur le 1er Waypoint 0
-        //needing.text = "I need " + produit_1.ToString() + " potions and " + produit_2.ToString() +" masks";
     }
 
     // Update is called once per frame
@@ -74,6 +73,13 @@ public class Scr_NPC : MonoBehaviour
         //Satisfaction du NPC. Points qui descendent avec le temps
         satisfactionPoint -= 2f * Time.deltaTime; //ajustement si necessaire     
         satisfactionBar.value = CalculBar();
+
+        if (satisfactionPoint <= 0)
+        {
+            satisfactionPoint = 0;
+            needing.text = "Way too long... I'm losing my time here!";
+            Move();
+        }
 
         if (produit_1 == 0 && produit_2 == 0)
         {
