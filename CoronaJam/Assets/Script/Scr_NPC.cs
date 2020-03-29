@@ -47,12 +47,17 @@ public class Scr_NPC : MonoBehaviour
         satisfactionBar.value = CalculBar();
 
         transform.position = waypoints[waypointIndex].transform.position; //fait apparaitre le NPC sur le 1er Waypoint 0
-        needing.text = "I need " + produit_1.ToString() + " potions and " + produit_2.ToString() +" masks";
+        //needing.text = "I need " + produit_1.ToString() + " potions and " + produit_2.ToString() +" masks";
     }
 
     // Update is called once per frame
     void Update()
     {
+        needing.text = "I need " + produit_1.ToString() + " potions and " + produit_2.ToString() + " masks";
+        if (produit_1 == 0 && produit_2 == 0)
+        {
+            needing.text = "Thank you!";
+        }
         //UI des Besoins et Invetaire du NPC
         //NPCNeed.text = ("Potion : {0} / {1} n/Mask : {2} / {3}", currentProduit_1, produitBesoin_1, currentProduit_2, produitBesoin_2);
         //probleme de String a Int  

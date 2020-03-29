@@ -24,7 +24,7 @@ public class Scr_CountdownTimer : MonoBehaviour
     {
         currentTime -= 1 * Time.deltaTime;
 
-        countdownText.text = currentTime.ToString("0"); //transfert de float a String.
+        countdownText.text = "Time until the day ends : " + currentTime.ToString("0"); //transfert de float a String.
 
         if (currentTime <= 0)
         {
