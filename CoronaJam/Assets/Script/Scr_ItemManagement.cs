@@ -37,11 +37,14 @@ public class Scr_ItemManagement : MonoBehaviour
         }
         if (npc.transform.position == npc.waypoints[3].transform.position)
         {
-            manager.SpawnNPC();
-            Destroy(npc);
-            
+            if (npc.boolOnce)
+            {
+                manager.SpawnNPC();
+                npc.boolOnce = false;
+                Destroy(npc);
+            }
         }
-        
+
     }
     // Fonctions
     private void OnTriggerEnter2D(Collider2D other)
