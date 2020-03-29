@@ -20,8 +20,9 @@ public class Scr_NPC : MonoBehaviour
     //public Text NPCNeed;
 
     public float satisfactionPoint;
-    public float satisfactionMaxPoint = 100f;
+    public float satisfactionMaxPoint = 100;
     public Slider satisfactionBar;
+    public bool countdownActive = true;
 
     public float score = 0f;
     public bool canGiveScore = true;
@@ -53,8 +54,10 @@ public class Scr_NPC : MonoBehaviour
     void Update()
     {
         needing.text = "I need " + produit_1.ToString() + " potions and " + produit_2.ToString() + " masks";
-        if (produit_1 == 0 && produit_2 == 0)
+        if (produit_1 == 0 && produit_2 == 0 && canGiveScore)
         {
+            elManager.score += satisfactionPoint;
+            canGiveScore = false;
             needing.text = "Thank you!";
         }
         //UI des Besoins et Invetaire du NPC
@@ -69,28 +72,34 @@ public class Scr_NPC : MonoBehaviour
         {
             Move();
         }
-        
-        //Satisfaction du NPC. Points qui descendent avec le temps
-        satisfactionPoint -= 2f * Time.deltaTime; //ajustement si necessaire     
-        satisfactionBar.value = CalculBar();
 
-        if (satisfactionPoint <= 0)
+        //Satisfaction du NPC. Points qui descendent avec le temps
+        if (produit_1 == 0 && produit_2 == 0) // si besoin est atteint...
         {
+            besoinAtteint = true;
+            countdownActive = false; 
+        }
+        if (transform.position == waypoints[4].transform.position) //va se deplacer hors de l'ecran
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (countdownActive) //si besoin n'est pas atteint
+        {
+            satisfactionPoint -= 2f * Time.deltaTime; //son taux de satisfaction descend. Ajustement si nessaire
+            satisfactionBar.value = CalculBar(); //indique a la barre Slider comment descendre
+        }
+        
+
+        if (satisfactionPoint <= 0) // si attends trop longtemps...
+        {
+            countdownActive = false;
             satisfactionPoint = 0;
             needing.text = "Way too long... I'm losing my time here!";
             Move();
         }
 
-        if (produit_1 == 0 && produit_2 == 0)
-        {
-            elManager.score += this.satisfactionPoint;
-            canGiveScore = false;
-            besoinAtteint = true;
-        }
-        if (transform.position == waypoints[4].transform.position)
-        {
-            Destroy(this.gameObject);
-        }
+       
 
 
     }
