@@ -126,3 +126,6 @@ MonoBehaviour:
   npc: {fileID: 0}
   dropOffAllowed: 0
   servi: 0
+  bottleClink: {fileID: 0}
+  MaskTaking: {fileID: 1436470809156328180, guid: bdaa9d27c088a8045a49c8d1cc8b9450,
+    type: 3}

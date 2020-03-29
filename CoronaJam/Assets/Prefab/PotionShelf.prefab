@@ -100,6 +100,9 @@ MonoBehaviour:
   npc: {fileID: 0}
   dropOffAllowed: 0
   servi: 0
+  bottleClink: {fileID: 878789806150049197, guid: 4bc467fa0dd373e409345bfde01c2fb8,
+    type: 3}
+  MaskTaking: {fileID: 0}
 --- !u!61 &5918099798645741311
 BoxCollider2D:
   m_ObjectHideFlags: 0
