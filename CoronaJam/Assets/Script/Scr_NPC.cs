@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Scr_NPC : MonoBehaviour
 {
@@ -9,14 +10,14 @@ public class Scr_NPC : MonoBehaviour
 
     public Scr_Manager elManager; //pour pouvoir avoir acces au SCORE du Manager
     
-    public int produit_1 = 0;
-    public int produit_2 = 0;
+    public int produit_1 = 0; //potions
+    public int produit_2 = 0; //masks
     private int nbrProduitMax = 5 + 1;
     public bool besoinAtteint= false;
     public bool boolOnce;
 
 
-    public Text NPCNeed;
+    //public Text NPCNeed;
 
     public float satisfactionPoint;
     public float satisfactionMaxPoint = 100f;
@@ -32,9 +33,12 @@ public class Scr_NPC : MonoBehaviour
     public  Transform[] waypoints; //tableau de waypoint dans Inspector
     private int waypointIndex = 0; //demarre au waypoint 0
 
+    public TextMeshProUGUI needing;
+
     // Start is called before the first frame update
     void Start()
     {
+        needing = this.gameObject.GetComponentInChildren<TextMeshProUGUI>();
         boolOnce = true;
         elManager = GameObject.Find("Manager").GetComponent<Scr_Manager>();
         //tr = this.transform;
@@ -43,7 +47,7 @@ public class Scr_NPC : MonoBehaviour
         satisfactionBar.value = CalculBar();
 
         transform.position = waypoints[waypointIndex].transform.position; //fait apparaitre le NPC sur le 1er Waypoint 0
-       
+        needing.text = "I need " + produit_1.ToString() + " potions and " + produit_2.ToString() +" masks";
     }
 
     // Update is called once per frame
