@@ -7,6 +7,8 @@ public class Scr_NPC : MonoBehaviour
 {
     //private Transform tr;
 
+    public Scr_Manager elManager; //pour pouvoir avoir acces au SCORE du Manager
+    
     public int produit_1 = 0;
     public int produit_2 = 0;
     private int nbrProduitMax = 5 + 1;
