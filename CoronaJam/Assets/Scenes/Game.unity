@@ -177,7 +177,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 21a7e76a68c1a204780b9e9aafde167b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84c33768755c2b24fb9373695cf1d0ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -706,7 +706,7 @@ PrefabInstance:
     - target: {fileID: 190425661581221699, guid: 3d86477e1b47bea40bf7d990bfd0d67c,
         type: 3}
       propertyPath: m_Name
-      value: oto_NPC (1)
+      value: 'oto_NPC '
       objectReference: {fileID: 0}
     - target: {fileID: 190425661581221703, guid: 3d86477e1b47bea40bf7d990bfd0d67c,
         type: 3}
@@ -979,7 +979,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fce3ceaf6d5ff65449b55e8f2b317483, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d254d5a658290c74a8a0c723fca617a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -998,7 +998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938343733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 270, z: 0}
+  m_LocalPosition: {x: 0, y: 270, z: 1}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
