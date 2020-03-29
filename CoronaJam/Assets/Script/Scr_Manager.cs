@@ -24,8 +24,10 @@ public class Scr_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Score.text = score.ToString(); // Met le score en string
-    if (potionNbr <= 0)
+        Score.text = score.ToString("F2"); // Met le score en string
+    
+        
+        if (potionNbr <= 0)
         {
             potionNbr = 0;
         }
