@@ -99,5 +99,7 @@ MonoBehaviour:
   total: 0
   modeleNPC: {fileID: 977728514084842952, guid: 3d86477e1b47bea40bf7d990bfd0d67c,
     type: 3}
+  modeleNPC2: {fileID: 8640817722789101286, guid: 35e2dac0cdcb1a248a6435afcb4cc2c8,
+    type: 3}
   score: 0
   Score: {fileID: 0}

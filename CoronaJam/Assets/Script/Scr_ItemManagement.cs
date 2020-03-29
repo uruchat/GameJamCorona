@@ -37,11 +37,16 @@ public class Scr_ItemManagement : MonoBehaviour
         }
         if (npc.transform.position == npc.waypoints[3].transform.position)
         {
-            if (npc.boolOnce)
+            if (npc.boolOnce && npc.name == "oto_NPC")
             {
                 manager.SpawnNPC();
                 npc.boolOnce = false;
                 //Destroy(npc);
+            }
+            if (npc.boolOnce && npc.name == "testNPC")
+            {
+                manager.SpawnNPC2();
+                npc.boolOnce = false;
             }
         }
 

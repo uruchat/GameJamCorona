@@ -11,6 +11,7 @@ public class Scr_Manager : MonoBehaviour
     public int maskNbr = 0;
     public int total = 0;
     public Scr_NPC modeleNPC;
+    public Scr_NPC modeleNPC2;
     public float score = 0;
     public Text Score;
     // Start is called before the first frame update
@@ -44,5 +45,13 @@ public class Scr_Manager : MonoBehaviour
         tempNPC.besoinAtteint = false;
         tempNPC.name = modeleNPC.name;
         
+    }
+    public void SpawnNPC2()
+    {
+        Vector3 posNPC2 = new Vector3(339.9f, -16.65f, 0);
+        Scr_NPC tempNPC2 = Instantiate(modeleNPC2, posNPC2, modeleNPC2.transform.rotation);
+        tempNPC2.besoinAtteint = false;
+        tempNPC2.name = modeleNPC2.name;
+
     }
 }
