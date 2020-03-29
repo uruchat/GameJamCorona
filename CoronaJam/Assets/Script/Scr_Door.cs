@@ -4,13 +4,36 @@ using UnityEngine;
 
 public class Scr_Door : MonoBehaviour
 {
+    public Transform Avatar;
     public Camera MainCamera;
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Avatar"))
         {
-            MainCamera.GetComponent<Scr_Camera>().TransitionCamera();
+
+            if (Avatar.transform.position.y <= 135)
+            {
+                MainCamera.GetComponent<Scr_Camera>().TransitionCameraToEntrepot();
+            }
+            if (Avatar.transform.position.y >= 135)
+            {
+                MainCamera.GetComponent<Scr_Camera>().TransitionCameraToComptoir();
+            }
         }
-    }
+    }*/
+
+
+   /* public void Update()
+    {
+        if (Avatar.transform.position.y >= 135 )
+        {
+            MainCamera.GetComponent<Scr_Camera>().TransitionCameraToEntrepot();
+        }
+        if (Avatar.transform.position.y <= 135 )
+        {
+            MainCamera.GetComponent<Scr_Camera>().TransitionCameraToComptoir();
+        }
+    }*/
+
 
 }
