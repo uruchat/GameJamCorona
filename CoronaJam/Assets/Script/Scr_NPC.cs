@@ -13,6 +13,7 @@ public class Scr_NPC : MonoBehaviour
     public int produit_2 = 0;
     private int nbrProduitMax = 5 + 1;
     public bool besoinAtteint= false;
+    public bool boolOnce;
 
 
     public Text NPCNeed;
@@ -34,6 +35,7 @@ public class Scr_NPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        boolOnce = true;
         elManager = GameObject.Find("Manager").GetComponent<Scr_Manager>();
         //tr = this.transform;
         NeedCreator(); //appele la creation du besoin
