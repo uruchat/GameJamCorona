@@ -308,7 +308,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4336cb916c6cbc948ba99b25d050a5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   countdownText: {fileID: 439314158}
+  potionInventory: {fileID: 0}
+  maskInventory: {fileID: 0}
+  totalInventory: {fileID: 0}
+  score: {fileID: 0}
 --- !u!114 &429457605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,6 +886,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf2857c8e195654aa5be6074b8c4257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Avatar: {fileID: 2074602138}
+--- !u!4 &2074602138 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1095801626878734977, guid: 211dbcce815093c4cad20caf0e0fcfcb,
+    type: 3}
+  m_PrefabInstance: {fileID: 2098632049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2098632049
 PrefabInstance:
   m_ObjectHideFlags: 0

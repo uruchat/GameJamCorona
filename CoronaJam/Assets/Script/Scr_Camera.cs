@@ -8,10 +8,11 @@ public class Scr_Camera : MonoBehaviour
     private Vector3 Entrepot = new Vector3(0, 270.0f, -10);
     private bool moveToEntrepot = false;
     private bool moveToComptoir = false;
+    public Transform Avatar;
 
     private float speed = 300.0f; //speed of camera
 
-    public void TransitionCamera()
+    public void TransitionCameraToEntrepot()
     {
         //this.transform.position = this.transform.position == Comptoir ? Entrepot : Comptoir;
 
@@ -20,13 +21,17 @@ public class Scr_Camera : MonoBehaviour
             //this.transform.position = Entrepot;     
             moveToEntrepot = true;
         }
-        else
+    }
+    public void TransitionCameraToComptoir()
+    {
+        //this.transform.position = this.transform.position == Comptoir ? Entrepot : Comptoir;
+
+        if (this.transform.position == Entrepot)
         {
-            //this.transform.position = Comptoir;
+            //this.transform.position = Entrepot;     
             moveToComptoir = true;
         }
     }
-
 
 
     public void Update()
@@ -54,5 +59,17 @@ public class Scr_Camera : MonoBehaviour
 
         if (this.transform.position == Entrepot) { moveToEntrepot = false; }
         if (this.transform.position == Comptoir) { moveToComptoir = false; }
+
+
+
+            if (Avatar.transform.position.y >= 135 && this.transform.position != Entrepot)
+            {
+                this.GetComponent<Scr_Camera>().TransitionCameraToEntrepot();
+            }
+            if (Avatar.transform.position.y <= 135 && this.transform.position != Comptoir)
+            {
+                this.GetComponent<Scr_Camera>().TransitionCameraToComptoir();
+            }
+
     }
 }
