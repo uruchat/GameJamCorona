@@ -29,6 +29,10 @@ public class Scr_ItemManagement : MonoBehaviour
         {
             Give();
         }
+        if (npc.produit_1 == 0 && npc.produit_2 == 0)
+        {
+            npc.besoinAtteint = true;
+        }
         
     }
     // Fonctions
@@ -40,6 +44,7 @@ public class Scr_ItemManagement : MonoBehaviour
         }
         if (other.CompareTag("Avatar") && this.CompareTag("DropOff"))
         {
+            //manager.SpawnNPC();
             
             dropOffAllowed = true;
             

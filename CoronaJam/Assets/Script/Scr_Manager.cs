@@ -16,14 +16,14 @@ public class Scr_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+      
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        Score.text = score.ToString();
+        Score.text = score.ToString(); // Met le score en string
     if (potionNbr <= 0)
         {
             potionNbr = 0;
@@ -37,9 +37,9 @@ public class Scr_Manager : MonoBehaviour
             total = 0;
         }
     }
-    /*public void SpawnNPC()
+    public void SpawnNPC()
     {
         Vector3 posNPC = new Vector3(0f, 0f, 0f);
         Scr_NPC tempNPC = Instantiate(modeleNPC, posNPC, modeleNPC.transform.rotation);
-    }*/
+    }
 }

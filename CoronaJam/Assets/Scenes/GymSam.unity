@@ -444,6 +444,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!1 &622368126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 622368127}
+  m_Layer: 0
+  m_Name: Waypoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &622368127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622368126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 59, y: -48, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &650413756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -613,6 +643,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864926884}
   m_CullTransparentMesh: 0
+--- !u!1 &909431618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 909431619}
+  m_Layer: 0
+  m_Name: Waypoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &909431619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909431618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -154, y: -44, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &928467280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -940,12 +1000,12 @@ PrefabInstance:
     - target: {fileID: 1095801626878734977, guid: 211dbcce815093c4cad20caf0e0fcfcb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.9
+      value: -154
       objectReference: {fileID: 0}
     - target: {fileID: 1095801626878734977, guid: 211dbcce815093c4cad20caf0e0fcfcb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -95.6
+      value: -44
       objectReference: {fileID: 0}
     - target: {fileID: 1095801626878734977, guid: 211dbcce815093c4cad20caf0e0fcfcb,
         type: 3}
@@ -991,6 +1051,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095801626878734977, guid: 211dbcce815093c4cad20caf0e0fcfcb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095801626878734977, guid: 211dbcce815093c4cad20caf0e0fcfcb,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1095801626878734981, guid: 211dbcce815093c4cad20caf0e0fcfcb,
         type: 3}
@@ -1046,14 +1116,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   produit_1: 0
   produit_2: 0
+  besoinAtteint: 0
   NPCNeed: {fileID: 0}
-  satisfactionPoint: 100
+  satisfactionPoint: 25
   satisfactionMaxPoint: 100
   satisfactionBar: {fileID: 0}
   score: 0
   canGiveScore: 1
-  moveSpeed: 2
-  waypoints: []
+  moveSpeed: 50
+  waypoints:
+  - {fileID: 909431619}
+  - {fileID: 622368127}
+  - {fileID: 1421299394}
+  - {fileID: 2048572266}
 --- !u!61 &1342775210
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1153,6 +1228,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396104415}
   m_CullTransparentMesh: 0
+--- !u!1 &1421299393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1421299394}
+  m_Layer: 0
+  m_Name: Waypoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1421299394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421299393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 65, y: -111, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1477221798 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1095801626878734981, guid: 211dbcce815093c4cad20caf0e0fcfcb,
@@ -1330,7 +1435,7 @@ MonoBehaviour:
   potionNbr: 0
   maskNbr: 0
   total: 0
-  modeleNPC: {fileID: 0}
+  modeleNPC: {fileID: 1342775209}
   score: 0
   Score: {fileID: 2113036617}
 --- !u!212 &1688618994
@@ -1596,6 +1701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   produit_1: 0
   produit_2: 0
+  besoinAtteint: 0
   NPCNeed: {fileID: 0}
   satisfactionPoint: 100
   satisfactionMaxPoint: 100
@@ -1709,6 +1815,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 211dbcce815093c4cad20caf0e0fcfcb, type: 3}
+--- !u!1 &2048572265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2048572266}
+  m_Layer: 0
+  m_Name: Waypoint (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2048572266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048572265}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -188, y: -108, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2109427428
 GameObject:
   m_ObjectHideFlags: 0
