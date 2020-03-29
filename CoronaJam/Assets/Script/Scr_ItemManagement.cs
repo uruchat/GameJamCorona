@@ -8,6 +8,7 @@ public class Scr_ItemManagement : MonoBehaviour
     public bool pickUpAllowed = false;
     public Scr_NPC npc;
     public bool dropOffAllowed = false;
+    public bool servi = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,14 @@ public class Scr_ItemManagement : MonoBehaviour
         }
         if (npc.produit_1 == 0 && npc.produit_2 == 0)
         {
+            servi = true;
             npc.besoinAtteint = true;
+        }
+        if (npc.transform.position == npc.waypoints[3].transform.position)
+        {
+            manager.SpawnNPC();
+            Destroy(npc);
+            
         }
         
     }

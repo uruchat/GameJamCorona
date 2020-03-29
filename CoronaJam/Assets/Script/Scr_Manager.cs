@@ -41,5 +41,8 @@ public class Scr_Manager : MonoBehaviour
     {
         Vector3 posNPC = new Vector3(0f, 0f, 0f);
         Scr_NPC tempNPC = Instantiate(modeleNPC, posNPC, modeleNPC.transform.rotation);
+        tempNPC.besoinAtteint = false;
+        tempNPC.name = modeleNPC.name;
+        
     }
 }
