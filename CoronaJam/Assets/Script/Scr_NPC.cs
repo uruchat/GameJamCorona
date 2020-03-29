@@ -60,9 +60,6 @@ public class Scr_NPC : MonoBehaviour
             canGiveScore = false;
            
         }
-        //UI des Besoins et Invetaire du NPC
-        //NPCNeed.text = ("Potion : {0} / {1} n/Mask : {2} / {3}", currentProduit_1, produitBesoin_1, currentProduit_2, produitBesoin_2);
-        //probleme de String a Int  
 
         if (transform.position == waypoints[1].transform.position && besoinAtteint == false)
         {
