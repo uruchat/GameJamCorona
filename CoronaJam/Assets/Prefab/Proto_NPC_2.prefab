@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5055191085696544958}
   m_Layer: 0
   m_Name: Proto_NPC_2
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,14 +95,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791e2b27b950ea04e833dfa7f66fdee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elManager: {fileID: 0}
   produit_1: 0
   produit_2: 0
+  besoinAtteint: 0
+  boolOnce: 0
   NPCNeed: {fileID: 0}
-  satisfactionPoint: 25
+  satisfactionPoint: 100
   satisfactionMaxPoint: 100
-  satisfactionBar: {fileID: 5055191085411850945}
+  satisfactionBar: {fileID: 0}
   score: 0
   canGiveScore: 1
+  moveSpeed: 50
+  waypoints:
+  - {fileID: 9071897980268048308, guid: 6ca187b050e88244790a5d4486ec347f, type: 3}
+  - {fileID: 8712322747977778209, guid: 96f17a6a1dbd8414d9345e145658dcc9, type: 3}
+  - {fileID: 5897293730378474823, guid: 603ec33d6f6ac3c4b8300e26944264de, type: 3}
+  - {fileID: 699063111034534089, guid: d78fede908621af4eaaf3fee7eb45cce, type: 3}
 --- !u!1 &5055191084593461075
 GameObject:
   m_ObjectHideFlags: 0
